@@ -11,10 +11,10 @@ class Player(object):
         while column == None:
             try:
                 number = int(input("Enter the column number): ")) - 1
+                if 0 <= number <= 6:
+                    column = number
+                else:
+                    raise ValueError()
             except ValueError:
-                number = None
-            if 0 <= number <= 6:
-                column = number
-            else:
                 print("Invalid number, try again")
         return column
